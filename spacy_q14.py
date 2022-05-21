@@ -8,6 +8,6 @@ def multi_lingual_NER(text, lang_code):
     nlp = spacy.load(lang_code)
     doc = nlp(text)
     for token in doc:
-        d = {'text':token.text, 'type':token.type, 'start_pos':token.idx, 'end_pos':token.idx+len(token.text)}
+        d = {'text':token.text, 'type':token.ent_type_, 'start_pos':token.idx, 'end_pos':token.idx+len(token.text)}
         ret.append(d)
     return ret   
